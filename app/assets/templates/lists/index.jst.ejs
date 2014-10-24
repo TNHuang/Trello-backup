@@ -1,0 +1,3 @@
+<% lists.each( function(list){ %>
+  <div class="board list" ><a href="#"><%= list.escape('title') %></a><button data-list-id="<%= list.escape('id') %>" class="button delete">Delete</button></div>
+<% }) %>

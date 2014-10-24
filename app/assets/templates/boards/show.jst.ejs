@@ -1,0 +1,39 @@
+<h5 class="board-title"><%= board.escape('title') %></h5>
+
+<div class="lists clearfix">
+
+  <% board.lists().each( function(list){ %>
+    <div class="list"><a href="#" class="list-header"><%= list.escape('title') %></a><button class="button delete-list">Delete</button>
+      <p class="card">test card</p>
+      <p class="card">test card</p>
+
+      <div class="new-card " >Add a card...</div>
+      <div class="create-card not-active" >
+        <form class="card-form ">
+          <input type="text" name="card[title]" class="card-input-form">
+          <div><button class="button submit-new-card" data-list-id="<%= list.escape('id') %>">Add</button>
+          <span class="cancel-submit icon" >&times;</span>
+         </div>
+
+        </form>
+      </div>
+    </div>
+  <% }) %>
+
+
+  <div class="board new-list  ">Add a list...</div>
+    <div class="create-list ">
+
+      <form class="list-form not-active">
+        <input type="text" name="list[title]" class="list-input-form" placeholder="Add a list...">
+        <div><button class="button submit-new-list" data-board-id="<%= board.escape('id') %>">Save</button>
+             <span class="cancel-submit icon" >&times;</span>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+<div class="button back-to-index">Go Back...</div>
+
